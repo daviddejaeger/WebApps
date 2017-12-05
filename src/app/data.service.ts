@@ -14,7 +14,7 @@ export class DataService{
     constructor(private _http: HttpClient){}
 
     getProducts(): Observable<IProduct[]>{
-        return this._http.get<IProduct[]>('http://localhost:3001/api/products')
+        return this._http.get<IProduct[]>("https://djdavid.herokuapp.com/api/products")
             .do(data => console.log('All: ' + JSON.stringify(data)))
             .catch(this.handleError);
     }
