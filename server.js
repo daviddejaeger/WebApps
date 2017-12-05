@@ -1,20 +1,29 @@
 const express = require('express');
 const http = require('http');
 const path = require('path');
-
-//const api = require('.server/routes/api');
+const bodyParser = require('body-parser');
 
 const app = express();
 
-//path is in 'dist' and all routes will be going to 'dist/index.html'.
-//this is because files are put into the 'dist' folder when we run ng build
-//__dirname is just a node variable which returns the path to the current directory
+//API file for interacting with MongoDB
+const api = require('./server/routes/api');
+
+//Parsers
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
+
+// Angular DIST output folder
 app.use(express.static(path.join(__dirname, 'dist')));
-//allows angular to handle our routing
+
+//API location
+app.use('/api',api);
+
+//Send all other requests to the Angular App
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname,'dist/index.html'));
 });
 
+//Set port
 const port = process.env.PORT || '3001';
 app.set('port', port);
 
