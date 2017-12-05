@@ -15,7 +15,17 @@ export class DataService{
 
     getProducts(): Observable<IProduct[]>{
         return this._http.get<IProduct[]>("https://djdavid.herokuapp.com/api/products")
-            //.do(data => console.log('All: ' + JSON.stringify(data)))
+            .do(data => console.log('All: ' + JSON.stringify(data)))
+            .catch(this.handleError);
+    }
+    getBabykledingProducts(): Observable<IProduct[]>{
+        return this._http.get<IProduct[]>("https://djdavid.herokuapp.com/api/products/babykleding")
+            .do(data => console.log('All: ' + JSON.stringify(data)))
+            .catch(this.handleError);
+    }
+    getZwangerschapProducts(): Observable<IProduct[]>{
+        return this._http.get<IProduct[]>("https://djdavid.herokuapp.com/api/products/zwangerschapskledij")
+            .do(data => console.log('All: ' + JSON.stringify(data)))
             .catch(this.handleError);
     }
     getProduct(id: number): Observable<IProduct> {

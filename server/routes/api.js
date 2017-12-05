@@ -55,6 +55,24 @@ router.get('/products', (req, res) => {
         res.json(products);
     });
 });
+//Get Babykleding
+router.get('/products/babykleding', (req, res) => {
+    db.products.find({type: "babykleding"},(err, products) => {
+        if (err){
+            res.send(err);
+        }
+        res.json(products);
+    });
+});
+//Get Zwangerschapskledij
+router.get('/products/zwangershapskledij', (req, res) => {
+    db.products.find({type: "zwangerschapskledij"},(err, products) => {
+        if (err){
+            res.send(err);
+        }
+        res.json(products);
+    });
+});
 
 //Get a single product
 router.get('/products/:id', (req, res) => {
