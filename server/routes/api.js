@@ -1,52 +1,11 @@
 const express = require('express');
 const router = express.Router();
-//const MongoClient = require('mongodb').MongoClient;
-//const objectID = require('mongodb').ObjectID;
-
 const mongojs =require('mongojs');
 const db = mongojs('mongodb://user:user@ds227045.mlab.com:27045/gettingstarted');
 
+//PRODUCTS
 
-//Connect
-// const connection = (closure) => {
-//     return MongoClient.connect('mongodb://user:user@ds227045.mlab.com:27045/gettingstarted', (err,db) =>{
-//         if (err) return console.log(err);
-
-//         closure(db);
-//     });
-// }
-
-//Error handling
-//const sendError = (err, res) =>{
-    //response.status = 501;
-    //response.message = typeof err == 'object' ? err.message : err;
-    //res.status(501).json(response);
-//};
-
-//Response handling
-// let response = {
-//     status: 200,
-//     data: [],
-//     message: null
-// }
-
-//Get products: return all products
-// router.get('/products', (req, res) => {
-//     connection((db)=>{
-//         db.collection('products')
-//             .find()
-//             .toArray()
-//             .then((products )=>{
-//                 response = products;
-//                 res.json(response);
-//             })
-//             .catch((err)=>{
-//                 sendError(err,res);
-//             });
-//     });
-// });
-
-//Get Products
+//Get All Products
 router.get('/products', (req, res) => {
     db.products.find((err, products) => {
         if (err){
@@ -115,5 +74,57 @@ router.put('/products/:id', (req, res) => {
     });
 });
 
+//USERS
+
+//Get All Users
+router.get('/users', (req, res) => {
+    db.users.find((err, users) => {
+        if (err){
+            res.send(err);
+        }
+        res.json(users);
+    });
+});
+
+//Get a single user
+router.get('/users/:id', (req, res) => {
+    db.users.findOne({_id: mongojs.ObjectId(req.params.id)},(err, users) => {
+        if (err){
+            res.send(err);
+        }
+        res.json(users);
+    });
+});
+//Add a user
+router.post('/users', (req,res ) =>{
+    var user = req.body;
+    db.users.save(user, (req,res ) => {
+        if(err){
+            res.send(err);
+        }
+        res.json(user);
+    });
+});
+
+//Deletes a user
+router.delete('/users/:id', (req, res) => {
+    db.users.remove({_id: mongojs.ObjectId(req.params.id)},(err, users) => {
+        if (err){
+            res.send(err);
+        }
+        res.json(users);
+    });
+});
+
+//Update a user
+router.put('/users/:id', (req, res) => {
+    var user = req.body;
+    db.users.update({_id: mongojs.ObjectId(req.params.id)},user,{},(err, users) => {
+        if (err){
+            res.send(err);
+        }
+        res.json(user);
+    });
+});
 
 module.exports = router;

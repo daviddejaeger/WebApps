@@ -1,3 +1,36 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<webshop-babykledinglist></webshop-babykledinglist>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container" style="">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                 <span class="icon-bar"></span>
+                </button>
+            <a [routerLink]="['/welcome']" class="navbar-brand">URSIUS</a>
+        </div>
+        <div class="collapse navbar-collapse" style="">
+            <ul class="nav navbar-nav">
+                <li class="active"><a class="" style="">Babykleding</a>
 
+                </li>
+                <li><a href="#" class="">Zwangerschapskledij</a>
+
+                </li>
+                <li><a href="#" class="">Borstvoedingskledij</a>
+
+                </li>
+                <li><a href="#" class="">Info</a>
+
+                </li>
+                <li><a href="#myModal" data-toggle="modal" data-target="#myModal">Inloggen</a>
+
+                </li>
+                <li><a href="#myModal" data-toggle="modal" data-target="#myModal">Registreren</a>
+                    
+                </li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</div>
+<router-outlet></router-outlet>

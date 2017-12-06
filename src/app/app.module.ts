@@ -1,18 +1,29 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule} from '@angular/common/http'
+import { HttpClientModule} from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { FormsModule} from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BabykledingListComponent } from './babykleding/babykleding-list.component';
 import { DataService } from './data.service';
+import { RegisterformComponent } from './registerform/registerform.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
-    AppComponent,BabykledingListComponent
+    AppComponent,BabykledingListComponent, RegisterformComponent, WelcomeComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    RouterModule.forRoot([
+      { path: 'register', component: RegisterformComponent},
+      { path: 'welcome', component: WelcomeComponent},
+      { path: '', redirectTo:'welcome', pathMatch:'full'},
+      { path: '**', redirectTo:'welcome', pathMatch:'full'}
+    ])
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

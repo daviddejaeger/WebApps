@@ -1,0 +1,193 @@
+<body>
+        <!--template-->
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container" style="">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                     <span class="icon-bar"></span>
+                    </button>
+                    <a href="index.html" class="navbar-brand"><img src="https://d32d8xzgnjxuvk.cloudfront.net/hub/1-2/img/logo.png" alt="..."></a>
+                    <button type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+                </div>
+                <div class="collapse navbar-collapse" style="">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#" class="" style="">Babykleding</a>
+        
+                        </li>
+                        <li><a href="#" class="">Zwangerschapskledij</a>
+        
+                        </li>
+                        <li><a href="#" class="">Borstvoedingskledij</a>
+        
+                        </li>
+                        <li><a href="#" class="">Info</a>
+        
+                        </li>
+                        <li><a href="#myModal" data-toggle="modal" data-target="#myModal">Inloggen</a>
+        
+                        </li>
+                    </ul>
+                    <div class="right-col d-flex align-items-lg-center flex-column flex-lg-row">
+                        <!-- User Not Logged - link to login page-->
+                        <div class="user"> <a id="userdetails" href="customer-login.html" class="user-link"><i class="icon-profile">                   </i></a></div>
+                        <!-- Cart Dropdown-->
+                        <div class="cart dropdown show"><a id="cartdetails" href="https://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="icon-cart"></i>
+                            <div class="cart-no">1</div></a><a href="cart.html" class="text-primary view-cart">View Cart</a>
+                          <div aria-labelledby="cartdetails" class="dropdown-menu">
+                            <!-- cart item-->
+                            <div class="dropdown-item cart-product">
+                              <div class="d-flex align-items-center">
+                                <div class="img"><img src="https://d32d8xzgnjxuvk.cloudfront.net/hub/1-2/img/hoodie-man-1.png" alt="..." class="img-fluid"></div>
+                                <div class="details d-flex justify-content-between">
+                                  <div class="text"> <a href="#"><strong>Heather Gray Hoodie</strong></a><small>Quantity: 1 </small><span class="price">$75.00 </span></div><a href="#" class="delete"><i class="fa fa-trash-o"></i></a>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- total price-->
+                            <div class="dropdown-item total-price d-flex justify-content-between"><span>Total</span><strong class="text-primary">$75.00</strong></div>
+                            <!-- call to actions-->
+                            <div class="dropdown-item CTA d-flex"><a href="cart.html" class="btn btn-template wide">View Cart</a><a href="checkout1.html" class="btn btn-template wide">Checkout</a></div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+                <!--/.nav-collapse -->
+            </div>
+        </div>
+        <div class="container">
+            <div class="col-md-12">
+                <div class="center-block text-center">
+                    <h1>Webshop Ursius</h1>
+                    <p class="lead">Zelfgemaakte babykleding</p>
+                </div>
+                <div class="container">
+                    <div class="menu row">
+                        <div class="sidebar col-xl-3 col-lg-3 sidebar">
+                            <div class="block">
+                              <h6 class="text-uppercase">Categorie</h6>
+                              <ul class="list-unstyled">
+                                <li>
+                                  <ul class="list-unstyled">
+                                    <li> <a href="#">Slabbetjes</a></li>
+                                    <li> <a href="#">T-shirts</a></li>
+                                    <li> <a href="#">Jassen</a></li>
+                                    <li> <a href="#">Broeken</a></li>
+                                  </ul>
+                                </li>                           
+                              </ul>
+                            </div>
+                            <div class="block">
+                              <h6 class="text-uppercase">Filter By Price  </h6>
+                              <div id="slider-snap" class="noUi-target noUi-ltr noUi-horizontal"><div class="noUi-base"><div class="noUi-origin" style="left: 16%;"><div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" style="z-index: 5;" aria-valuemin="0.0" aria-valuemax="44.0" aria-valuenow="16.0" aria-valuetext="40.00"></div></div><div class="noUi-connect" style="left: 16%; right: 56%;"></div><div class="noUi-origin" style="left: 44%;"><div class="noUi-handle noUi-handle-upper" data-handle="1" tabindex="0" role="slider" aria-orientation="horizontal" style="z-index: 6;" aria-valuemin="16.0" aria-valuemax="100.0" aria-valuenow="44.0" aria-valuetext="110.00"></div></div></div></div>
+                              <div class="value d-flex justify-content-between">
+                                <div class="min">From <span id="slider-snap-value-lower" class="example-val">40.00</span>$</div>
+                                <div class="max">To <span id="slider-snap-value-upper" class="example-val">110.00</span>$</div>
+                              </div><a href="#" class="filter-submit">filter</a>
+                            </div>
+                            <div class="block">
+                              <h6 class="text-uppercase">Brands </h6>
+                              <form action="#">
+                                <div class="form-group">
+                                  <input id="calvin" name="clothes-brand" checked="" class="checkbox-template" type="checkbox">
+                                  <label for="calvin">Calvin Klein <small>(18)</small></label>
+                                </div>
+                                <div class="form-group">
+                                  <input id="levi-strauss" name="clothes-brand" checked="" class="checkbox-template" type="checkbox">
+                                  <label for="levi-strauss">Levi Strauss <small>(30)</small></label>
+                                </div>
+                                <div class="form-group">
+                                  <input id="hugo-boss" name="clothes-brand" class="checkbox-template" type="checkbox">
+                                  <label for="hugo-boss">Hugo Boss <small>(120)</small></label>
+                                </div>
+                                <div class="form-group">
+                                  <input id="tomi-hilfiger" name="clothes-brand" class="checkbox-template" type="checkbox">
+                                  <label for="tomi-hilfiger">Tomi Hilfiger <small>(70)</small></label>
+                                </div>
+                                <div class="form-group">
+                                  <input id="tom-ford" name="clothes-brand" class="checkbox-template" type="checkbox">
+                                  <label for="tom-ford">Tom Ford <small>(110)</small></label>
+                                </div>
+                              </form>
+                            </div>
+                          </div>
+                        <div class="products-grid col-xl-9 col-lg-8 sidebar-left">
+                <header class="d-flex justify-content-between align-items-start"><span class="visible-items">Showing <strong>1-15 </strong>of <strong>158 </strong>results</span>
+                  <div class="btn-group bootstrap-select bs-select"><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" role="button" data-id="sorting" title="Newest"><span class="filter-option pull-left">Newest</span>&nbsp;<span class="bs-caret"><span class="caret"></span></span></button><div class="dropdown-menu open" role="combobox"><ul class="dropdown-menu inner" role="listbox" aria-expanded="false"><li data-original-index="0" class="selected"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="true"><span class="text">Newest</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="1"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Oldest</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="2"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">Low Price</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li><li data-original-index="3"><a tabindex="0" class="" data-tokens="null" role="option" aria-disabled="false" aria-selected="false"><span class="text">High Price</span><span class="glyphicon glyphicon-ok check-mark"></span></a></li></ul></div><select id="sorting" class="bs-select" tabindex="-98">
+                    <option value="newest">Newest</option>
+                    <option value="oldest">Oldest</option>
+                    <option value="lowest-price">Low Price</option>
+                    <option value="heigh-price">High Price</option>
+                  </select></div>
+                </header>
+                <div class="row">
+                  <!-- item-->
+                  <div *ngFor='let product of products' class="item col-xl-4 col-md-3">
+                    <div class="product is-gray">
+                      <div class="image d-flex align-items-center justify-content-center">
+                        <div *ngIf='product.onSale' class="ribbon ribbon-primary text-uppercase">Sale</div>
+                        <a href="detail.html"><img src={{product.small_image}} alt="product" class="img-fluid"/></a>
+                      </div>
+                      <div class="title">
+                        <a href="detail.html">
+                          <h3 class="h6 text-uppercase no-margin-bottom">{{product.name}}</h3>
+                        </a>
+                          <span class="price text-muted">{{product.price.sale_price}}</span></div>
+                    </div>
+                  </div>
+                  
+                </div>
+                <nav aria-label="page navigation example" class="d-flex justify-content-center">
+                  <ul class="pagination pagination-custom">
+                    <li class="page-item"><a href="#" aria-label="Previous" class="page-link"><span aria-hidden="true">Prev</span><span class="sr-only">Previous</span></a></li>
+                    <li class="page-item"><a href="#" class="page-link active">1       </a></li>
+                    <li class="page-item"><a href="#" class="page-link">2       </a></li>
+                    <li class="page-item"><a href="#" class="page-link">3       </a></li>
+                    <li class="page-item"><a href="#" class="page-link">4       </a></li>
+                    <li class="page-item"><a href="#" class="page-link">5 </a></li>
+                    <li class="page-item"><a href="#" aria-label="Next" class="page-link"><span aria-hidden="true">Next</span><span class="sr-only">Next     </span></a></li>
+                  </ul>
+                </nav>
+              </div>
+                    </div>
+                    <!--/row-->
+                </div>
+                <!--/container-->
+            </div>
+        </div>
+        
+        <hr>
+        
+        
+        <div class="modal fade" id="myModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                  <h4 class="modal-title">Log In</h4>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input class="form-control" id="exampleInputEmail1" placeholder="Enter email" type="email">
+                    </div>
+                  <div class="form-group">
+                      <label for="exampleInputPassword1">Password</label>
+                    <input class="form-control" id="exampleInputPassword1" placeholder="Password" type="password">
+                  </div>
+                  <p class="text-right"><a href="#">Forgot password?</a></p>
+                </div>
+                <div class="modal-footer">
+                  <a href="#" data-dismiss="modal" class="btn">Close</a>
+                  <a href="#" class="btn btn-primary">Log-in</a>
+                </div>
+              </div>
+            </div>
+        </div>
+        
+        <!--/template-->
+            
+                <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+                <script src="js/bootstrap.min.js"></script>
+    </body>

@@ -1,16 +1,15 @@
-/*
-A custom Bootstrap 3.3 theme from http://bootply.com
-This CSS code should follow the 'bootstrap.css'
-in your HTML file.
-
-license: MIT
-author: bootply.com
-*/
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 
 body {
-    padding-top:40px;
+    padding-top:50px;
    }
    
+* {
+    font-family: 'Poppins', sans-serif;
+}  
+.navbar{
+    margin-bottom: 10px;
+}
    .productsrow {
     -moz-column-width: 18em;
     -webkit-column-width: 18em;
@@ -141,6 +140,13 @@ body {
     .d-flex {
         display: -ms-flexbox !important;
         display: flex !important;
+    }
+    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+        margin-bottom: .5rem;
+        font-family: "Poppins",sans-serif;
+        font-weight: 800;
+        line-height: 1.1;
+        color: inherit;
     }
    
    /* end custom CSS */
