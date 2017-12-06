@@ -24,6 +24,7 @@ import { LoginformComponent } from './loginform/loginform.component';
       { path: 'register', component: RegisterformComponent},
       { path: 'login', component: LoginformComponent},
       { path: 'welcome', component: WelcomeComponent},
+      { path: 'babykleding', component: BabykledingListComponent},
       { path: '', redirectTo:'welcome', pathMatch:'full'},
       { path: '**', redirectTo:'welcome', pathMatch:'full'}
     ])
