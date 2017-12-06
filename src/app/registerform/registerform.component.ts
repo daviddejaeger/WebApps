@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 import { IUser } from '../user';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-registerform',
@@ -7,6 +10,7 @@ import { IUser } from '../user';
   styleUrls: ['./registerform.component.css']
 })
 export class RegisterformComponent implements OnInit {
+  loading = false;
   user: any = {
     voornaam: "",
     achternaam: "",
@@ -15,13 +19,17 @@ export class RegisterformComponent implements OnInit {
     wachtwoord2: "",
     isAdmin: false
   };
-  constructor() { }
+  constructor(private _dataService: DataService, private _router: Router) { }
 
   ngOnInit() {
     
   } 
   registerUser(){
-    console.log("register User called, voornaam: " + this.user.voornaam);
+    this.loading = true;
+    this._dataService.insertUser(this.user)
+      .subscribe(data => this._router.navigate(['/login']),
+        error => console.log(error));
+    this.loading = false;
   }
 
 }

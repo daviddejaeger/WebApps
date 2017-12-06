@@ -10,11 +10,11 @@ const app = express();
 const api = require('./server/routes/api');
 
 //configure cors
-var corsOptions = {
-    origin:  "http://localhost:4200",
-    optionsSuccessStatus: 200 
-}
-app.use(cors(corsOptions))
+// var corsOptions = {
+//     origin:  "http://localhost:4200",
+//     optionsSuccessStatus: 200 
+// }
+app.use(cors());
 
 //Parsers
 app.use(bodyParser.urlencoded({extended:true}));

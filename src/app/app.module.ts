@@ -9,10 +9,12 @@ import { BabykledingListComponent } from './babykleding/babykleding-list.compone
 import { DataService } from './data.service';
 import { RegisterformComponent } from './registerform/registerform.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { AuthenticationService } from './authentication.service';
+import { LoginformComponent } from './loginform/loginform.component';
 
 @NgModule({
   declarations: [
-    AppComponent,BabykledingListComponent, RegisterformComponent, WelcomeComponent
+    AppComponent,BabykledingListComponent, RegisterformComponent, WelcomeComponent,LoginformComponent
   ],
   imports: [
     BrowserModule,
@@ -20,12 +22,13 @@ import { WelcomeComponent } from './welcome/welcome.component';
     FormsModule,
     RouterModule.forRoot([
       { path: 'register', component: RegisterformComponent},
+      { path: 'login', component: LoginformComponent},
       { path: 'welcome', component: WelcomeComponent},
       { path: '', redirectTo:'welcome', pathMatch:'full'},
       { path: '**', redirectTo:'welcome', pathMatch:'full'}
     ])
   ],
-  providers: [DataService],
+  providers: [DataService,AuthenticationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

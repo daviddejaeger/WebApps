@@ -41,7 +41,7 @@
           </div>         
       </div>
 
-      <button type="submit" class="btn btn-success" [disabled]="!registerForm.form.valid">Registreer mij</button>
+      <button type="submit" class="btn btn-success" [disabled]="!registerForm.form.valid || loading">Registreer mij</button>
  
     </form>
 </div>

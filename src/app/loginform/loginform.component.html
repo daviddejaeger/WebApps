@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>Aanmelden</h1><br>
+  <form (ngSubmit)="loginUser()" #loginForm="ngForm">
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" #email="ngModel" id="email" [(ngModel)]="user.email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="passwoord">Wachtwoord:</label>
+      <input type="password" class="form-control" #wachtwoord="ngModel" id="wachtwoord" [(ngModel)]="user.wachtwoord" name="wachtwoord">
+    </div>
+    <button type="submit" class="btn btn-success">Aanmelden</button>
+  </form>
+</div>
