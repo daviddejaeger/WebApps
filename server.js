@@ -11,7 +11,7 @@ const api = require('./server/routes/api');
 
 //configure cors
 // var corsOptions = {
-//     origin:  "http://localhost:4200",
+//     origin:  ["http://localhost:4200","http://localhost:4200/register"],
 //     optionsSuccessStatus: 200 
 // }
 app.use(cors());
