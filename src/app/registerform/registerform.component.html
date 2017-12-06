@@ -1,21 +1,47 @@
-<form id="login-box" (submit)='registerUser(username.value,email.value,password.value)'>
-    <div class="left">
-      <h1>Sign up</h1>
-      
-      <input type="text" name="username" placeholder="Username" #username />
-      <input type="text" name="email" placeholder="E-mail" #email />
-      <input type="password" name="password" placeholder="Password" #password />
-      <input type="password" name="password2" placeholder="Retype password" />
-      
-      <input type="submit" name="signup_submit" value="Sign me up" />
-    </div>
-    
-    <div class="right">
-      <span class="loginwith">Sign in with<br />social network</span>
-      
-      <button class="social-signin facebook">Log in with facebook</button>
-      <button class="social-signin twitter">Log in with Twitter</button>
-      <button class="social-signin google">Log in with Google+</button>
-    </div>
-    <div class="or">OR</div>
-  </form>
+<div class="container">
+    <h1>Registeren</h1><br>
+    <form (ngSubmit)="registerUser()" #registerForm="ngForm">
+      <div class="form-group">
+        <label for="voornaam">Voornaam:</label>
+        <input type="text" class="form-control" id="voornaam" 
+        [(ngModel)]="user.voornaam" name="voornaam" #voornaam="ngModel" required>
+        <div [hidden]="voornaam.valid || voornaam.pristine" class="alert alert-danger">Voornaam is verplicht in te vullen</div>
+      </div>
+ 
+      <div class="form-group">
+          <label for="achternaam">Achternaam:</label>
+          <input type="text" class="form-control" #achternaam="ngModel" id="achternaam" 
+          [(ngModel)]="user.achternaam" name="achternaam" required>
+          <div [hidden]="achternaam.valid || achternaam.pristine" class="alert alert-danger">Achternaam is verplicht in te vullen</div>
+      </div>
+
+      <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" class="form-control" #email="ngModel" id="email"
+          [(ngModel)]="user.email" name="email" required email>
+          <div [hidden]="email.valid || email.pristine" class="alert alert-danger">
+              <div *ngIf="email.errors?.required">Email is verplicht in te vullen</div>
+              <div *ngIf="email.errors?.email">Gelieve een geldig emailadres in te vullen</div>
+          </div>
+      </div>
+
+      <div class="form-group">
+          <label for="passwoord">Wachtwoord:</label>
+          <input type="password" class="form-control" #wachtwoord="ngModel" id="wachtwoord" 
+          [(ngModel)]="user.wachtwoord" name="wachtwoord" required>
+          <div [hidden]="wachtwoord.valid || wachtwoord.pristine" class="alert alert-danger">Wachtwoord is verplicht in te vullen</div>
+      </div>
+      <div *ngIf="user.wachtwoord.length > 0" class="form-group">
+          <label for="passwoord2">Bevestig passwoord:</label>
+          <input type="password" class="form-control" #wachtwoord2="ngModel" id="wachtwoord2"
+          [(ngModel)]="user.wachtwoord2" name="wachtwoord2" required pattern={{user.wachtwoord}}>
+          <div [hidden]="wachtwoord2.valid || wachtwoord2.pristine" class="alert alert-danger">
+              <div *ngIf="wachtwoord2.errors?.required">Bevestig wachtwoord is verplicht in te vullen</div>
+              <div *ngIf="wachtwoord2.errors?.pattern">Wachtwoorden komen niet overeen</div>
+          </div>         
+      </div>
+
+      <button type="submit" class="btn btn-success" [disabled]="!registerForm.form.valid">Registreer mij</button>
+ 
+    </form>
+</div>

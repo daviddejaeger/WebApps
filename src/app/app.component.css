@@ -1,3 +1,42 @@
 .navbar-brand{
     font-size: 18px;
 }
+footer.main-footer {
+    background: #111;
+}
+footer.main-footer .services-block {
+    background: #171717;
+    color: #fff;
+    padding: 20px 0;
+}
+footer.main-footer .main-block {
+    background: #111;
+    padding: 50px 0;
+    color: #999;
+}
+footer.main-footer .services-block div[class*="col-"] {
+    border-right: 1px solid #555;
+}
+footer.main-footer .services-block h6 {
+    font-weight: 700;
+}
+footer.main-footer .services-block span {
+    font-weight: 300;
+    color: #999;
+    font-size: 0.9em;
+}
+footer.main-footer .services-block div[class*="col-"]:last-of-type {
+    border: none;
+}
+footer.main-footer .services-block .icon {
+    margin-right: 10px;
+    font-size: 2em;
+}
+a, span, i, small {
+    display: inline-block;
+}
+footer.main-footer .copyrights {
+    background: #0e0e0e;
+    color: #888;
+    padding: 10px 0;
+}
