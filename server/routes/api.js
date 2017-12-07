@@ -127,7 +127,7 @@ router.put('/users/:id', (req, res) => {
     });
 });
 //Login a user
-router.get('/users/login', (req, res) => {
+router.post('/users/login', (req, res) => {
     console.log(req.body);
     var user = req.body;
     db.users.findOne({email: user.email},(err, users) => {
