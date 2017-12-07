@@ -128,13 +128,12 @@ router.put('/users/:id', (req, res) => {
 });
 //Login a user
 router.post('/users/login', (req, res) => {
-    console.log(req.body);
-    var user = req.body;
-    db.users.findOne({email: user.email},(err, users) => {
+    var userData = req.body;
+    db.users.findOne({email: userData.email},(err, users) => {
         if (err){
             res.send(err);
         }
-        res.json(user);
+        res.json(users);
     });
 });
 
