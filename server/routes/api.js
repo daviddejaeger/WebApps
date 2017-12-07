@@ -135,6 +135,12 @@ router.post('/users/login', (req, res) => {
         }
         res.json(users);
     });
+
+    var payload ={};
+
+    var token = jwt.encode(payload, '123');
+
+    console.log(token);
 });
 
 module.exports = router;
