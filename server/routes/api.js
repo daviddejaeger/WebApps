@@ -127,10 +127,10 @@ router.put('/users/:id', (req, res) => {
     });
 });
 //Login a user
-router.get('/users/login', async (req, res) => {
+router.get('/users/login', (req, res) => {
     console.log(req.body);
     var user = req.body;
-    await db.users.findOne({email: user.email},(err, users) => {
+    db.users.findOne({email: user.email},(err, users) => {
         if (err){
             res.send(err);
         }
