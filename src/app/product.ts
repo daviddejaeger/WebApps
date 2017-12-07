@@ -10,5 +10,8 @@ export interface IProduct{
     onsale: boolean;
     small_image: string;
     large_image: string;
-    price: any[];
+    price: {
+        list_price: number,
+        sale_price: number
+    }
 }
