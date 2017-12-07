@@ -1,0 +1,62 @@
+<!-- Hero Section-->
+<section class="gray-bg padding-small">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" align="center">
+        <h1>{{product?.name}}</h1>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="product-details">
+  <div class="container">
+    <div class="row">
+      <div class="product-images col-lg-6">
+        <div class="ribbon-primary text-uppercase">Sale</div>
+        <div>
+          <div><img src={{product?.large_image}} alt="product-img"></div>
+        </div>
+      </div>
+      <div class="details col-lg-6">
+        <div>
+          <ul class="price list-inline">
+            <li class="list-inline-item current">{{product?.price.sale_price | currency:'EUR':true:'1.2-2'}}</li>
+            <li class="list-inline-item original">{{product?.price.list_price | currency:'EUR':true:'1.2-2'}}</li>
+          </ul>
+        </div>
+        <p>{{product?.short_description}}</p>
+        <div>
+          <div class="quantity">
+            <div class="dec-btn">-</div>
+            <input type="text" value="1" class="quantity-no">
+            <div class="inc-btn">+</div>
+          </div>
+          <button type="button" class="btn btn-template wide btn-lg">
+            <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="product-description">
+  <div class="container">
+    <ul role="tablist" class="nav nav-tabs">
+      <li class="nav-item" class="active"><a data-toggle="tab" href="#description" role="tab" class="nav-link">Beschrijving</a></li>
+      <li class="nav-item"><a data-toggle="tab" href="#additional-information" role="tab" class="nav-link">Extra informatie</a></li>
+    </ul>
+    <div class="tab-content">
+      <div id="description" role="tabpanel" class="tab-pane active">
+        <p>{{product?.long_description}}</p>
+      </div>
+      <div id="additional-information" role="tabpanel" class="tab-pane">
+        <ul class="list-unstyled additional-information">
+          <li><strong>Compsition:</strong><span>Cottom</span></li>
+          <li><strong>Styles:</strong><span>Casual</span></li>
+          <li><strong>Properties:</strong><span>Short Sleeve</span></li>
+          <li><strong>Brand:</strong><span>Calvin Klein</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

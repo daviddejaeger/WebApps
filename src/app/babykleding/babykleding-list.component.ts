@@ -5,7 +5,8 @@ import { IProduct } from "../product";
 
 @Component({
     selector:'webshop-babykledinglist',
-    templateUrl:'./babykleding-list.component.html'
+    templateUrl:'./babykleding-list.component.html',
+    styleUrls: ['./babykleding-list.component.css']
 })
 export class BabykledingListComponent implements OnInit{
     products: IProduct[];

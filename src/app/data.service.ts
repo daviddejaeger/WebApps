@@ -16,21 +16,18 @@ export class DataService{
     //products
     getProducts(): Observable<IProduct[]>{
         return this._http.get<IProduct[]>("https://djdavid.herokuapp.com/api/products")
-            .do(data => console.log('All: ' + JSON.stringify(data)))
             .catch(this.handleError);
     }
     getBabykledingProducts(): Observable<IProduct[]>{
         return this._http.get<IProduct[]>("https://djdavid.herokuapp.com/api/products/babykleding")
-            .do(data => console.log('All: ' + JSON.stringify(data)))
             .catch(this.handleError);
     }
     getZwangerschapProducts(): Observable<IProduct[]>{
         return this._http.get<IProduct[]>("https://djdavid.herokuapp.com/api/products/zwangerschapskledij")
-            .do(data => console.log('All: ' + JSON.stringify(data)))
             .catch(this.handleError);
     }
-    getProduct(id: number): Observable<IProduct> {
-        return this._http.get<IProduct>("https://djdavid.herokuapp.com/api/products" + id)
+    getProduct(id: string): Observable<IProduct> {
+        return this._http.get<IProduct>("https://djdavid.herokuapp.com/api/products/" + id)
         .catch(this.handleError);
     }
     insertProduct(product: IProduct): Observable<IProduct> {
@@ -38,22 +35,21 @@ export class DataService{
         .catch(this.handleError);
     }
     updateProduct(product: IProduct): Observable<IProduct> {
-        return this._http.put<IProduct>("https://djdavid.herokuapp.com/api/products" + product._id,product)
+        return this._http.put<IProduct>("https://djdavid.herokuapp.com/api/products/" + product._id,product)
         .catch(this.handleError);
     }
-    deleteProduct(id: number): Observable<IProduct> {
-        return this._http.delete<IProduct>("https://djdavid.herokuapp.com/api/products" + id)
+    deleteProduct(id: string): Observable<IProduct> {
+        return this._http.delete<IProduct>("https://djdavid.herokuapp.com/api/products/" + id)
         .catch(this.handleError);
     }
 
     //users
     getUsers(): Observable<IUser[]>{
         return this._http.get<IUser[]>("https://djdavid.herokuapp.com/api/users")
-            .do(data => console.log('All: ' + JSON.stringify(data)))
             .catch(this.handleError);
     }
-    getuser(id: number): Observable<IUser> {
-        return this._http.get<IUser>("https://djdavid.herokuapp.com/api/users" + id)
+    getUser(id: string): Observable<IUser> {
+        return this._http.get<IUser>("https://djdavid.herokuapp.com/api/users/" + id)
         .catch(this.handleError);
     }
     insertUser(user: IUser): Observable<IUser> {
@@ -61,11 +57,11 @@ export class DataService{
         .catch(this.handleError);
     }
     updateUser(user: IUser): Observable<IUser> {
-        return this._http.put<IUser>("https://djdavid.herokuapp.com/api/users" + user._id,user)
+        return this._http.put<IUser>("https://djdavid.herokuapp.com/api/users/" + user._id,user)
         .catch(this.handleError);
     }
-    deleteUser(id: number): Observable<IUser> {
-        return this._http.delete<IUser>("https://djdavid.herokuapp.com/api/users" + id)
+    deleteUser(id: string): Observable<IUser> {
+        return this._http.delete<IUser>("https://djdavid.herokuapp.com/api/users/" + id)
         .catch(this.handleError);
     }
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from '../authentication.service';
 
 @Component({
   selector: 'app-loginform',
@@ -7,11 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginformComponent implements OnInit {
   loginfailed = false;
-  constructor() { }
+  loading = false;
+
+  user: any = {
+    email: "",
+    wachtwoord: ""
+  };
+
+  constructor(private _authenticationService: AuthenticationService) { }
 
   ngOnInit() {
+
   }
+
   loginUser(){
-    console.log('login user called');
+    this.loading = true;
+    this._authenticationService.loginUser(this.user)
+      .subscribe(data => console.log(data),
+        error => console.log(error));
+    this.loading = false;
   }
 }

@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { Router } from '@angular/router';
 
 import { RegisterformComponent } from './registerform.component';
+
 
 describe('RegisterformComponent', () => {
   let component: RegisterformComponent;
@@ -8,7 +10,10 @@ describe('RegisterformComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RegisterformComponent ]
+      declarations: [ RegisterformComponent ],
+      providers : [
+        { provide: Router, useClass: RouterStub}
+      ]
     })
     .compileComponents();
   }));
@@ -23,3 +28,7 @@ describe('RegisterformComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+class RouterStub {
+  navigateByUrl(url: string) { return url; }
+}

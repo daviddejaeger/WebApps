@@ -126,5 +126,16 @@ router.put('/users/:id', (req, res) => {
         res.json(user);
     });
 });
+//Login a user
+router.get('/users/login', async (req, res) => {
+    console.log(req.body);
+    var user = req.body;
+    await db.users.findOne({email: user.email},(err, users) => {
+        if (err){
+            res.send(err);
+        }
+        res.json(user);
+    });
+});
 
 module.exports = router;

@@ -11,10 +11,11 @@ import { RegisterformComponent } from './registerform/registerform.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { AuthenticationService } from './authentication.service';
 import { LoginformComponent } from './loginform/loginform.component';
+import { BabykledingDetailComponent } from './babykleding/babykleding-detail.component';
 
 @NgModule({
   declarations: [
-    AppComponent,BabykledingListComponent, RegisterformComponent, WelcomeComponent,LoginformComponent
+    AppComponent,BabykledingListComponent, RegisterformComponent, WelcomeComponent,LoginformComponent, BabykledingDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -25,6 +26,7 @@ import { LoginformComponent } from './loginform/loginform.component';
       { path: 'login', component: LoginformComponent},
       { path: 'welcome', component: WelcomeComponent},
       { path: 'babykleding', component: BabykledingListComponent},
+      { path: 'babykleding/:id', component: BabykledingDetailComponent},
       { path: '', redirectTo:'welcome', pathMatch:'full'},
       { path: '**', redirectTo:'welcome', pathMatch:'full'}
     ])
