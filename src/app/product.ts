@@ -10,5 +10,5 @@ export interface IProduct{
     onsale: boolean;
     small_image: string;
     large_image: string;
-    price: string[];
+    price: any[];
 }
