@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class LoginformComponent implements OnInit {
   loginfailed = false;
   loading = false;
+  error = false;
 
   user: any = {
     email: "",
@@ -27,9 +28,12 @@ export class LoginformComponent implements OnInit {
     this._authenticationService.loginUser(this.user)
       .subscribe(data => {
         this._authenticationService.resetUsername();
+        this.error = false;
         this._router.navigate(['/welcome'])
       },
-        error => console.log(error.message));
+        error => {
+          this.error = true;
+        });
     this.loading = false;
   }
 }

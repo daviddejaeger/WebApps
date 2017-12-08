@@ -10,5 +10,8 @@
       <input type="password" class="form-control" id="wachtwoord" [(ngModel)]="user.wachtwoord" name="wachtwoord">
     </div>
     <button type="submit" class="btn btn-success">Aanmelden</button>
+    <div [hidden]="!error" class="alert alert-danger">
+        <div>'Email or Password invalid'</div>
+    </div>
   </form>
 </div>
