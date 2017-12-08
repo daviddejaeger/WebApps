@@ -10,7 +10,7 @@ export class AppComponent{
   title = 'webshop';
   username = this._authenticationService.username;
 
-  constructor(private _authenticationService: AuthenticationService){
+  constructor(public _authenticationService: AuthenticationService){
     
   }  
 }
