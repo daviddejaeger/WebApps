@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-loginform',
@@ -15,7 +16,7 @@ export class LoginformComponent implements OnInit {
     wachtwoord: ""
   };
 
-  constructor(private _authenticationService: AuthenticationService) { }
+  constructor(private _authenticationService: AuthenticationService, private _router: Router) { }
 
   ngOnInit() {
 
@@ -24,7 +25,10 @@ export class LoginformComponent implements OnInit {
   loginUser(){
     this.loading = true;
     this._authenticationService.loginUser(this.user)
-      .subscribe(data => console.log(data),
+      .subscribe(data => {
+        this._authenticationService.resetUsername();
+        this._router.navigate(['/welcome'])
+      },
         error => console.log(error));
     this.loading = false;
   }

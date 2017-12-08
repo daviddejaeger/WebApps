@@ -51,11 +51,7 @@ export class DataService{
     getUser(id: string): Observable<IUser> {
         return this._http.get<IUser>("https://djdavid.herokuapp.com/api/users/" + id)
         .catch(this.handleError);
-    }
-    insertUser(user: IUser): Observable<IUser> {
-        return this._http.post<IUser>("https://djdavid.herokuapp.com/api/users",user)
-        .catch(this.handleError);
-    }
+    }    
     updateUser(user: IUser): Observable<IUser> {
         return this._http.put<IUser>("https://djdavid.herokuapp.com/api/users/" + user._id,user)
         .catch(this.handleError);

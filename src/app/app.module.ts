@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule} from '@angular/forms';
 
@@ -12,6 +12,7 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { AuthenticationService } from './authentication.service';
 import { LoginformComponent } from './loginform/loginform.component';
 import { BabykledingDetailComponent } from './babykleding/babykleding-detail.component';
+import { AuthInterceptorService } from './auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,11 @@ import { BabykledingDetailComponent } from './babykleding/babykleding-detail.com
       { path: '**', redirectTo:'welcome', pathMatch:'full'}
     ])
   ],
-  providers: [DataService,AuthenticationService],
+  providers: [DataService,AuthenticationService,{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

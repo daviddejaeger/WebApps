@@ -19,12 +19,18 @@
                 <li><a href="#" class="">Info</a>
 
                 </li>
-                <li><a [routerLink]="['/login']">Aanmelden</a>
+                <li *ngIf="!_authenticationService.isAuthenticated"><a [routerLink]="['/login']">Aanmelden</a>
 
                 </li>
-                <li><a [routerLink]="['/register']">Registreren</a>
+                <li *ngIf="!_authenticationService.isAuthenticated"><a [routerLink]="['/register']">Registreren</a>
                     
                 </li>
+                <li class="list-item-welkom" *ngIf="_authenticationService.isAuthenticated"><a>Welkom {{_authenticationService.username}}</a>
+                  
+                </li>
+                <li class="list-item-logout" *ngIf="_authenticationService.isAuthenticated"><button class="btn-logout" (click)="_authenticationService.logOut()">Uitloggen</button> 
+                  
+              </li>
             </ul>
         </div>
         <!--/.nav-collapse -->
