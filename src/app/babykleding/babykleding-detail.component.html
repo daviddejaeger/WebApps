@@ -27,9 +27,9 @@
         <p>{{product?.short_description}}</p>
         <div>
           <div class="quantity">
-            <div class="dec-btn">-</div>
-            <input type="text" value="1" class="quantity-no">
-            <div class="inc-btn">+</div>
+            <div class="dec-btn" (click)='decrement()'>-</div>
+            <input type="text" value={{quantity}} class="quantity-no">
+            <div class="inc-btn" (click)='increment()'>+</div>
           </div>
           <button type="button" class="btn btn-template wide btn-lg">
             <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
@@ -51,10 +51,9 @@
       </div>
       <div id="additional-information" role="tabpanel" class="tab-pane">
         <ul class="list-unstyled additional-information">
-          <li><strong>Compsition:</strong><span>Cottom</span></li>
-          <li><strong>Styles:</strong><span>Casual</span></li>
-          <li><strong>Properties:</strong><span>Short Sleeve</span></li>
-          <li><strong>Brand:</strong><span>Calvin Klein</span></li>
+          <li><strong>Materiaal: </strong><span>{{product?.details.materiaal}}</span></li>
+          <li><strong>Kleur: </strong><span>{{product?.details.kleur}}</span></li>
+          <li><strong>Leeftijd: </strong><span>{{product?.leeftijd}}</span></li>
         </ul>
       </div>
     </div>

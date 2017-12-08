@@ -16,7 +16,7 @@ export class AuthenticationService{
   constructor(private _http: HttpClient) { }
 
   loginUser(loginData: any[]): Observable<any> {
-    return this._http.post<any>("http://localhost:3001/api/users/login", loginData)
+    return this._http.post<any>("https://djdavid.herokuapp.com/api/users/login", loginData)
     .do(data => {
       this.saveToken(data.token);
       this.saveUsername(data.username);
@@ -25,7 +25,7 @@ export class AuthenticationService{
   }
 
   insertUser(user: IUser): Observable<IUser> {
-    return this._http.post<any>("http://localhost:3001/api/users",user)
+    return this._http.post<any>("https://djdavid.herokuapp.com/api/users",user)
     .do(data => {
       this.saveToken(data.token);
       this.saveUsername(data.username);

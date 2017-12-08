@@ -37,15 +37,29 @@ describe('BabykledingDetailComponent', () => {
     
     this.spy = spyOn(dataService,'getProduct')
     .and.returnValue(Observable.of({
-      _id: 'dfkfsldkfjklds',
-      type: 'babykleding',
-      name: 'slabbetje1',
-      categorie: 'slabbetje',
-      price: {
-        list_price: 15.5,
-        sale_price: 11.5
+      "_id": {
+          "$oid": "5a22810c734d1d5aaf0e1fe9"
+      },
+      "sku": "SLA001",
+      "name": "slabbetje1",
+      "type": "babykleding",
+      "category": "slabbetje",
+      "short_description": "slabbetje voor baby's",
+      "long_description": "dit slabbetje voor baby's is gemaakt met een strik zodat men dit gemakkelijk kan toedoen",
+      "brand": "Ursius",
+      "onsale": "true",
+      "small_image": "https://d32d8xzgnjxuvk.cloudfront.net/hub/1-2/img/hoodie-woman-1.png",
+      "large_image": "https://d32d8xzgnjxuvk.cloudfront.net/hub/1-2/img/shirt.png",
+      "price": {
+          "list_price": 15.5,
+          "sale_price": 11.99
+      },
+      "details": {
+          "kleur": "wit",
+          "leeftijd": "3-6 maanden",
+          "materiaal": "katoen"
       }
-    }));
+  }));
     
     de = fixture.debugElement;
     el = de.query(By.css('h1')).nativeElement;

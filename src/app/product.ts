@@ -14,4 +14,5 @@ export interface IProduct{
         list_price: number,
         sale_price: number
     }
+    details: any;
 }

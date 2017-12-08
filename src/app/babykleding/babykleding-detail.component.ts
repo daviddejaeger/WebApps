@@ -12,6 +12,7 @@ import { IProduct } from '../product';
 export class BabykledingDetailComponent implements OnInit {
   product: IProduct;
   errorMessage: string;
+  quantity: number =1;
 
   constructor(private _route: ActivatedRoute, private _dataService:DataService) { }
 
@@ -20,7 +21,13 @@ export class BabykledingDetailComponent implements OnInit {
     this._dataService.getProduct(id)
       .subscribe(product => this.product = product,
       error => this.errorMessage = <any>error);
-    console.log(this.product);
   }
-
+  decrement(){
+    if (this.quantity >1){
+      this.quantity -= 1;
+    }
+  }
+  increment(){
+    this.quantity += 1;
+  }
 }

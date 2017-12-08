@@ -8,12 +8,12 @@ describe('webshop App', () => {
     page = new AppPage();
   });
 
-  it('should display welcome message', () => {
+  it('should display ursius in the copyrights paragraph', () => {
     browser.get('/');
-    const title = element(by.css('h3')).getText();
-    expect(title).toEqual('WELKOM');
+    const paragraph = element(by.css('p')).getText();
+    expect(paragraph).toContain('Ursius');
     // page.navigateTo();
     // expect(page.getParagraphText()).toEqual('Welcome to app!');
   });
-  
+
 });

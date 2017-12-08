@@ -13,10 +13,10 @@
                 <li a [routerLink]="['/babykleding']"><a class="">Babykleding</a>
 
                 </li>
-                <li><a href="#" class="">Zwangerschapskledij</a>
+                <!-- <li><a href="#" class="">Zwangerschapskledij</a>
 
-                </li>
-                <li><a href="#" class="">Info</a>
+                </li> -->
+                <li><a [routerLink]="['/info']" class="">Info</a>
 
                 </li>
                 <li *ngIf="!_authenticationService.isAuthenticated"><a [routerLink]="['/login']">Aanmelden</a>

@@ -1,0 +1,31 @@
+p{
+    line-height: 2em;
+    padding-bottom: 20px;
+}
+h2{
+    padding-top:20px;
+}
+.infobox{
+    color: #5e7f96;
+    border-color: #cfebfe;
+    background-color: #dff2fe;
+    border-radius: 5px;
+    font-size: 16px;
+    position: relative;
+    padding-left: 25px;
+}
+/* .infobox-icon{
+    bottom: 0;
+    font-size: 1em;
+    left: 0;
+    top: 0;
+    width: 4em;
+    color: #56b0ee;
+    display: inline-block;
+} */
+.fa{
+    color: #56b0ee;
+    display: inline-block;
+    padding-top: 15px;
+    padding-right: 25px;
+}

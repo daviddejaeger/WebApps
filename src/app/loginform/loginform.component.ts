@@ -29,7 +29,7 @@ export class LoginformComponent implements OnInit {
         this._authenticationService.resetUsername();
         this._router.navigate(['/welcome'])
       },
-        error => console.log(error));
+        error => console.log(error.message));
     this.loading = false;
   }
 }

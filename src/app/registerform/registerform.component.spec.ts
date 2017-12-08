@@ -11,9 +11,7 @@ describe('RegisterformComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ RegisterformComponent ],
-      providers : [
-        { provide: Router, useClass: RouterStub}
-      ]
+      providers : []
     })
     .compileComponents();
   }));
@@ -24,11 +22,5 @@ describe('RegisterformComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
 });
 
-class RouterStub {
-  navigateByUrl(url: string) { return url; }
-}

@@ -13,10 +13,11 @@ import { AuthenticationService } from './authentication.service';
 import { LoginformComponent } from './loginform/loginform.component';
 import { BabykledingDetailComponent } from './babykleding/babykleding-detail.component';
 import { AuthInterceptorService } from './auth-interceptor.service';
+import { InfoComponent } from './info/info.component';
 
 @NgModule({
   declarations: [
-    AppComponent,BabykledingListComponent, RegisterformComponent, WelcomeComponent,LoginformComponent, BabykledingDetailComponent
+    AppComponent,BabykledingListComponent, RegisterformComponent, WelcomeComponent,LoginformComponent, BabykledingDetailComponent, InfoComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +28,7 @@ import { AuthInterceptorService } from './auth-interceptor.service';
       { path: 'login', component: LoginformComponent},
       { path: 'welcome', component: WelcomeComponent},
       { path: 'babykleding', component: BabykledingListComponent},
+      { path: 'info', component: InfoComponent},
       { path: 'babykleding/:id', component: BabykledingDetailComponent},
       { path: '', redirectTo:'welcome', pathMatch:'full'},
       { path: '**', redirectTo:'welcome', pathMatch:'full'}
